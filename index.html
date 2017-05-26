@@ -10,32 +10,34 @@
 </head>
 <body>
 	<header><h1 id="title">Star Wars RPG!</h1></header>
-
-	<div class="pictureContainers">
-		<h4 class="characterNames">Obi-Wan Kenobi</h4>
-		<img class="characterPictures" src="assets/images/obiwan.jpg">
-		<h4 class="characterHealth">120</h4>
-	</div>
-	<div class="pictureContainers">
-		<!-- <h4 class="characterNames"></h4>
-		<img class="characterPictures"></div>
-		<h4 class="characterHealth"></h4> -->
-	</div>
-	<div class="pictureContainers">
-		<!-- <h4 class="characterNames"></h4>
-		<img class="characterPictures"></div>
-		<h4 class="characterHealth"></h4> -->
-	</div>
-	<div class="pictureContainers">
-		<!-- <h4 class="characterNames"></h4>
-		<img class="characterPictures"></div>
-		<h4 class="characterHealth"></h4> -->
-	</div>
-	<h3 id="yourCharacterHeading">Your Character</h3>
-	<br><br><br><br><br><br>
+		<!-- <div class="containingContainers"> -->
+			<div class="pictureContainers">
+				<h4 class="characterNames">Obi-Wan Kenobi</h4>
+				<img class="characterPictures" src="assets/images/obiwan.jpg">
+				<h4 class="characterHealth">120</h4>
+			</div>
+			<div class="pictureContainers">
+				<h4 class="characterNames">Luke Skywalker</h4>
+				<img class="characterPictures" src="assets/images/lukeskywalker.png">
+				<h4 class="characterHealth">100</h4>
+			</div>
+			<div class="pictureContainers">
+				<h4 class="characterNames">Darth Sidious</h4>
+				<img class="characterPictures" src="assets/images/darthsidious.jpg" style="height: 70px;">
+				<h4 class="characterHealth">150</h4>
+			</div>
+			<div class="pictureContainers">
+				<h4 class="characterNames">Darth Maul</h4>
+				<img class="characterPictures" src="assets/images/darthmaul.jpg">
+				<h4 class="characterHealth">180</h4>
+			</div>
+		<!-- </div> -->
+	<h3>Your Character</h3>
+	<div id="yourCharacterHeading"></div>
+	<!-- <br><br><br><br><br><br> -->
 	
-	<h3>Enemies Available To Attack<br>
-		Fight Section</h3>
+	<h3 id="availableEnemies">Enemies Available To Attack</h3>
+	<h3 id="fightSection">Fight Section</h3>
 
 	<button type="button">Attack</button>
 
@@ -43,6 +45,31 @@
 
 
 	<script>
+
+		$(document).ready(function(){
+
+			$('.pictureContainers').on("click", function(){
+				console.log('working');
+				$('.pictureContainers').not(this).each(function(){
+				
+					// $(this).animate({ top: "-=200px" }, "normal");
+					$(this).appendTo('#yourCharacterHeading');
+					$(this).css("background-color", "red");
+				});
+
+			});
+
+
+
+
+
+
+
+
+
+
+		});
+
 
 	</script>
 </body>
