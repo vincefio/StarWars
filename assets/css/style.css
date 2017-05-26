@@ -50,3 +50,11 @@ h4{
 button{
 	cursor: pointer;
 }
+
+.enemyAvailable{
+	background-color: red;
+}
+
+#defender{
+	background-color: #333;
+}

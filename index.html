@@ -11,22 +11,22 @@
 <body>
 	<header><h1 id="title">Star Wars RPG!</h1></header>
 		<!-- <div class="containingContainers"> -->
-			<div class="pictureContainers">
+			<div class="pictureContainers characterAvailable">
 				<h4 class="characterNames">Obi-Wan Kenobi</h4>
 				<img class="characterPictures" src="assets/images/obiwan.jpg">
 				<h4 class="characterHealth">120</h4>
 			</div>
-			<div class="pictureContainers">
+			<div class="pictureContainers characterAvailable">
 				<h4 class="characterNames">Luke Skywalker</h4>
 				<img class="characterPictures" src="assets/images/lukeskywalker.png">
 				<h4 class="characterHealth">100</h4>
 			</div>
-			<div class="pictureContainers">
+			<div class="pictureContainers characterAvailable">
 				<h4 class="characterNames">Darth Sidious</h4>
 				<img class="characterPictures" src="assets/images/darthsidious.jpg" style="height: 70px;">
 				<h4 class="characterHealth">150</h4>
 			</div>
-			<div class="pictureContainers">
+			<div class="pictureContainers characterAvailable">
 				<h4 class="characterNames">Darth Maul</h4>
 				<img class="characterPictures" src="assets/images/darthmaul.jpg">
 				<h4 class="characterHealth">180</h4>
@@ -41,26 +41,61 @@
 
 	<button type="button">Attack</button>
 
-	<h3 id=defenderHeader>Defender</h3>
+	<h3>Defender</h3>
+	<div id=defenderHeader></div>
 
 
 	<script>
 
 		$(document).ready(function(){
 
-			$('.pictureContainers').on("click", function(){
-				console.log('working');
-				$('.pictureContainers').not(this).each(function(){
+			//Why are these changing when I click twice even though I remove the class characterAvailable and use it as a selector on the click
+			// $('.characterAvailable').on("click", function(){
+			// 	$(this).removeClass("characterAvailable");
+			// 	$(this).addClass("myCharacter");
 				
+			// 	$('.pictureContainers').not(this).each(function(){
+			// 		$(this).removeClass("characterAvailable");
+			// 		$(this).addClass("enemyAvailable");
+					
+			// 		// $(this).animate({ top: "-=200px" }, "normal");
+			// 		$(this).appendTo('#yourCharacterHeading');
+			// 		//$(this).css("background-color", "red");
+			// 	});
+
+			// });
+
+				$('.characterAvailable').on("click", function(){
+				$(this).removeClass("characterAvailable");
+				//$(this).addClass("myCharacter");
+				$(this).attr('id', 'myCharacter');
+				
+				$('.characterAvailable').not(this).each(function(){
+					$(this).removeClass("characterAvailable");
+					//$(this).removeClass();
+					$(this).addClass("enemyAvailable");
+					
 					// $(this).animate({ top: "-=200px" }, "normal");
 					$(this).appendTo('#yourCharacterHeading');
-					$(this).css("background-color", "red");
+					//$(this).css("background-color", "red");
+
+							
 				});
+
+				$('.enemyAvailable').on("click", function(){
+				$(this).appendTo('#defenderHeader');
+				//id defenderHeader
+				//$(this).addClass('defender');	
+				$(this).attr('id', 'defender');
+				});
+
+			
+
 
 			});
 
-
-
+		
+		
 
 
 
