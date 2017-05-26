@@ -1,0 +1,30 @@
+body{
+	background-image: url('../images/backgroundship.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: 'Geostar Fill', cursive;
+}
+header{
+	/*position: relative;*/
+}
+
+#title{
+	margin-right: 75px;
+	margin-left: 60%;
+}
+
+.pictureContainers{
+	width: 150px;
+	height: 150px;
+	border: 5px solid green;
+	display: inline-block;
+}
+
+h4{
+	/*margin:;*/
+	/*dsisplay: inline-block;*/
+}
+
+.characterPictures{
+	width: 70%;
+}
