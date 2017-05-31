@@ -50,6 +50,46 @@
 
 		$(document).ready(function(){
 
+			//objects of characters
+		var characters = [
+			{
+				name: "Obi-Wan-Kenobi",
+				health: 140,
+				attack: 15,
+				pictureUrl: "assets/images/obiwan.jpg", 
+				counterAttack: 8
+			},
+
+			{
+				name: "Luke Skywalker",
+				health: 100,
+				attack: 8,
+				pictureUrl: "assets/images/lukeskywalker.png",
+				counterAttack: 25
+			},
+
+			{
+				name: "Darth Sidious",
+				health: 150,
+				attack: 9,
+				pictureUrl: "assets/images/darthsidious.jpg",
+				counterAttack: 20
+			},
+
+			{
+				name: "Darth Maul",
+				health: 180,
+				attack: 10,
+				pictureUrl: "assets/images/darthmaul.jpg",
+				counterAttack: 18
+			}
+		]
+
+		//create and render the characters in the correct position on the page
+		for(var i = 0; i < characters.length; i++){
+			var newDiv = $('');
+		}
+
 			$('.characterAvailable').on("click", function(){
 				$(this).removeClass("characterAvailable");
 				//$(this).addClass("myCharacter");
@@ -97,11 +137,11 @@
 
 				var attackSentence = 'You attacked your enemy for ' + fighterAttack + ' damage. Your enemy attacked you back for ' + defenderCounterAttack; 
 
-				$('#attackSentence').html(attackSentence);
+				$('#attackSentence').append(attackSentence);
 
 				// $('#defenderHeader').append
 				//append new health
-				$('#defenderHeader').html(defenderHealth);
+				$('#defenderHeader').append(defenderHealth);
 			});
 
 		
